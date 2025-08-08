@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="APEX Athletic - Innovative sports products engineered for peak performance. Discover cutting-edge athletic gear designed for champions.">
+    <meta name="keywords" content="sports equipment, athletic gear, performance technology, innovative sports products">
+    <meta name="author" content="APEX Athletic">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="APEX Athletic - Engineered for Champions">
+    <meta property="og:description" content="Discover innovative sports products that push the boundaries of human performance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apex-athletic.com">
+    
+    <title>APEX Athletic - Engineered for Champions</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    
+    <!-- GSAP for Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <svg class="loader-logo" width="60" height="60" viewBox="0 0 60 60">
+                <path d="M30 5 L50 20 L50 40 L30 55 L10 40 L10 20 Z" fill="none" stroke="#0066FF" stroke-width="2"/>
+            </svg>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" aria-label="APEX Athletic Home">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <path d="M20 2 L35 10 L35 25 L20 33 L5 25 L5 10 Z" fill="#0066FF"/>
+                    <text x="20" y="22" text-anchor="middle" fill="white" font-size="14" font-weight="bold">A</text>
+                </svg>
+                <span class="logo-text">APEX</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#technology" class="nav-link">Technology</a></li>
+                <li><a href="#athletes" class="nav-link">Athletes</a></li>
+                <li><a href="#sustainability" class="nav-link">Sustainability</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <!-- Video placeholder - replace with actual video in production -->
+            <div class="hero-video-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #000428 0%, #004e92 100%);"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Engineered for</span>
+                <span class="title-line accent">Champions</span>
+            </h1>
+            <p class="hero-subtitle">Pushing the boundaries of human performance through innovative sports technology</p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary">Explore Products</a>
+                <a href="#technology" class="btn btn-secondary">
+                    <span>Watch Film</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <polygon points="5,3 17,10 5,17" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Revolutionary Products</h2>
+                <p class="section-subtitle">Each piece engineered with precision and purpose</p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Product 1: Smart Performance Wear -->
+                <article class="product-card" data-category="wearables">
+                    <div class="product-image">
+                        <img src="assets/images/product-smartwear.jpg" alt="APEX Smart Performance Wear" loading="lazy">
+                        <div class="product-overlay">
+                            <span class="product-tag">New Release</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Smart Performance Wear</h3>
+                        <p class="product-description">Biometric monitoring meets athletic comfort. Real-time performance tracking woven into every fiber.</p>
+                        <div class="product-features">
+                            <span class="feature">Heart Rate Monitor</span>
+                            <span class="feature">Moisture Control</span>
+                            <span class="feature">UV Protection</span>
+                        </div>
+                        <a href="#" class="product-link">Learn More →</a>
+                    </div>
+                </article>
+
+                <!-- Product 2: Quantum Running Shoes -->
+                <article class="product-card" data-category="footwear">
+                    <div class="product-image">
+                        <img src="assets/images/product-quantum.jpg" alt="APEX Quantum Running Shoes" loading="lazy">
+                        <div class="product-overlay">
+                            <span class="product-tag">Best Seller</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Quantum Series</h3>
+                        <p class="product-description">Energy-return technology that adapts to your stride. 40% more efficient than traditional running shoes.</p>
+                        <div class="product-features">
+                            <span class="feature">Adaptive Cushioning</span>
+                            <span class="feature">Carbon Fiber Plate</span>
+                            <span class="feature">3D Knit Upper</span>
+                        </div>
+                        <a href="#" class="product-link">Learn More →</a>
+                    </div>
+                </article>
+
+                <!-- Product 3: Recovery System -->
+                <article class="product-card" data-category="recovery">
+                    <div class="product-image">
+                        <img src="assets/images/product-recovery.jpg" alt="APEX Recovery System" loading="lazy">
+                        <div class="product-overlay">
+                            <span class="product-tag">Innovation</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Recovery Pro System</h3>
+                        <p class="product-description">Advanced compression therapy with AI-driven recovery protocols. Reduce recovery time by 50%.</p>
+                        <div class="product-features">
+                            <span class="feature">AI Recovery Coach</span>
+                            <span class="feature">Dynamic Compression</span>
+                            <span class="feature">Heat Therapy</span>
+                        </div>
+                        <a href="#" class="product-link">Learn More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Breakthrough Technology</h2>
+                <p class="section-subtitle">Innovation at the molecular level</p>
+            </div>
+            
+            <div class="tech-showcase">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#0066FF" stroke-width="2"/>
+                            <path d="M20 30 L30 20 L40 30 L30 40 Z" fill="#0066FF"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">NanoFlex Fabric</h3>
+                    <p class="tech-description">Molecular-level engineering creates fabric that's 10x stronger than steel yet softer than silk.</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <rect x="15" y="15" width="30" height="30" fill="none" stroke="#0066FF" stroke-width="2"/>
+                            <circle cx="30" cy="30" r="10" fill="#0066FF"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Quantum Energy Return</h3>
+                    <p class="tech-description">Proprietary cushioning system that stores and returns 95% of impact energy.</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <polygon points="30,10 50,25 50,45 30,60 10,45 10,25" fill="none" stroke="#0066FF" stroke-width="2"/>
+                            <circle cx="30" cy="30" r="5" fill="#0066FF"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">BioSync AI</h3>
+                    <p class="tech-description">Machine learning algorithms that adapt to your unique biomechanics in real-time.</p>
+                </div>
+            </div>
+            
+            <div class="tech-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="40">0</span>
+                    <span class="stat-suffix">%</span>
+                    <p class="stat-label">Performance Increase</p>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="95">0</span>
+                    <span class="stat-suffix">%</span>
+                    <p class="stat-label">Energy Return</p>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-suffix">%</span>
+                    <p class="stat-label">Faster Recovery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Athletes Section -->
+    <section class="athletes" id="athletes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by Champions</h2>
+                <p class="section-subtitle">Elite athletes choose APEX for uncompromising performance</p>
+            </div>
+            
+            <div class="athletes-grid">
+                <div class="athlete-card">
+                    <div class="athlete-image">
+                        <img src="assets/images/athlete-1.jpg" alt="Professional Runner" loading="lazy">
+                    </div>
+                    <div class="athlete-content">
+                        <h3 class="athlete-name">Sarah Chen</h3>
+                        <p class="athlete-title">Olympic Marathon Champion</p>
+                        <blockquote class="athlete-quote">"The Quantum Series transformed my training. I've never felt more connected to my performance."</blockquote>
+                    </div>
+                </div>
+                
+                <div class="athlete-card">
+                    <div class="athlete-image">
+                        <img src="assets/images/athlete-2.jpg" alt="Professional Basketball Player" loading="lazy">
+                    </div>
+                    <div class="athlete-content">
+                        <h3 class="athlete-name">Marcus Johnson</h3>
+                        <p class="athlete-title">NBA All-Star</p>
+                        <blockquote class="athlete-quote">"APEX Recovery System is a game-changer. I'm back on court faster and stronger."</blockquote>
+                    </div>
+                </div>
+                
+                <div class="athlete-card">
+                    <div class="athlete-image">
+                        <img src="assets/images/athlete-3.jpg" alt="Professional Cyclist" loading="lazy">
+                    </div>
+                    <div class="athlete-content">
+                        <h3 class="athlete-name">Elena Rodriguez</h3>
+                        <p class="athlete-title">Tour de France Winner</p>
+                        <blockquote class="athlete-quote">"Smart Performance Wear gives me the edge. Real-time data that actually matters."</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability" id="sustainability">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sustainable Innovation</h2>
+                <p class="section-subtitle">Performance without compromise to our planet</p>
+            </div>
+            
+            <div class="sustainability-content">
+                <div class="sustainability-stats">
+                    <div class="eco-stat">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <path d="M25 10 C15 10, 10 20, 10 30 C10 35, 15 40, 25 40 C35 40, 40 35, 40 30 C40 20, 35 10, 25 10" fill="none" stroke="#00CC66" stroke-width="2"/>
+                            <path d="M25 15 L25 35 M20 25 L30 25" stroke="#00CC66" stroke-width="2"/>
+                        </svg>
+                        <h3>Carbon Neutral</h3>
+                        <p>100% carbon neutral manufacturing by 2025</p>
+                    </div>
+                    
+                    <div class="eco-stat">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="20" fill="none" stroke="#00CC66" stroke-width="2"/>
+                            <path d="M15 25 C15 25, 20 15, 25 25 C30 35, 35 25, 35 25" stroke="#00CC66" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h3>Ocean Plastic</h3>
+                        <p>50% of materials from recycled ocean plastic</p>
+                    </div>
+                    
+                    <div class="eco-stat">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <rect x="10" y="10" width="30" height="30" fill="none" stroke="#00CC66" stroke-width="2" rx="5"/>
+                            <path d="M20 25 L23 28 L30 21" stroke="#00CC66" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h3>Zero Waste</h3>
+                        <p>Zero waste to landfill in all facilities</p>
+                    </div>
+                </div>
+                
+                <div class="sustainability-image">
+                    <img src="assets/images/sustainability.jpg" alt="APEX Sustainable Manufacturing" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p class="about-lead">At APEX Athletic, we believe that human potential is limitless. Our mission is to create innovative sports products that empower athletes to push beyond their boundaries.</p>
+                    <p>Founded in 2020 by a team of engineers, designers, and professional athletes, APEX combines cutting-edge technology with deep understanding of athletic performance. Every product is tested in the most demanding conditions, ensuring that when it matters most, our gear performs.</p>
+                    <div class="about-values">
+                        <div class="value">
+                            <h3>Innovation First</h3>
+                            <p>Constantly pushing the boundaries of what's possible</p>
+                        </div>
+                        <div class="value">
+                            <h3>Athlete Focused</h3>
+                            <p>Designed by athletes, for athletes</p>
+                        </div>
+                        <div class="value">
+                            <h3>Sustainable Future</h3>
+                            <p>Performance without environmental compromise</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about-team.jpg" alt="APEX Athletic Team" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Join the APEX community</p>
+            </div>
+            
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="product">Product Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="support">Customer Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>Headquarters</h3>
+                        <p>123 Innovation Drive<br>San Francisco, CA 94105<br>United States</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>Contact</h3>
+                        <p>Email: hello@apex-athletic.com<br>Phone: +1 (555) 123-4567</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="2" y="9" width="4" height="12" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="4" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg width="40" height="40" viewBox="0 0 40 40">
+                        <path d="M20 2 L35 10 L35 25 L20 33 L5 25 L5 10 Z" fill="#0066FF"/>
+                        <text x="20" y="22" text-anchor="middle" fill="white" font-size="14" font-weight="bold">A</text>
+                    </svg>
+                    <p>Engineered for Champions</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#">Smart Wearables</a></li>
+                            <li><a href="#">Footwear</a></li>
+                            <li><a href="#">Recovery Systems</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Investors</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Returns</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 APEX Athletic. All rights reserved.</p>
+                <p>Made with passion for performance</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

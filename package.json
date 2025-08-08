@@ -1,0 +1,27 @@
+{
+  "name": "apex-athletic-website",
+  "version": "1.0.0",
+  "description": "Premium sports brand website for APEX Athletic - Engineered for Champions",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "sports",
+    "athletic",
+    "premium",
+    "website",
+    "static-site"
+  ],
+  "author": "APEX Athletic",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apex-athletic/website.git"
+  }
+}

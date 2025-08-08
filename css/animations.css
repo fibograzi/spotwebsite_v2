@@ -1,0 +1,569 @@
+/* APEX Athletic - Animations & Advanced Effects */
+
+/* ========================================
+   GSAP Animation Classes
+   ======================================== */
+.gsap-fade-in {
+    opacity: 0;
+}
+
+.gsap-slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.gsap-slide-left {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.gsap-slide-right {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.gsap-scale {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.gsap-rotate {
+    opacity: 0;
+    transform: rotate(-10deg);
+}
+
+/* ========================================
+   Parallax Effects
+   ======================================== */
+.parallax-element {
+    will-change: transform;
+}
+
+.parallax-slow {
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.parallax-medium {
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.parallax-fast {
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ========================================
+   Hover Effects
+   ======================================== */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.hover-glow:hover::before {
+    width: 300%;
+    height: 300%;
+}
+
+/* ========================================
+   Text Effects
+   ======================================== */
+.text-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-reveal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    transition: left 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.text-reveal.revealed::after {
+    left: 100%;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-stroke {
+    -webkit-text-stroke: 2px var(--color-primary);
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   Button Effects
+   ======================================== */
+.btn-magnetic {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-slide {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary-dark);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-slide:hover::before {
+    left: 0;
+}
+
+/* ========================================
+   Card Effects
+   ======================================== */
+.card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+}
+
+.card-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.card-shine:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+/* ========================================
+   Image Effects
+   ======================================== */
+.img-zoom {
+    overflow: hidden;
+}
+
+.img-zoom img {
+    transition: transform 0.6s ease;
+}
+
+.img-zoom:hover img {
+    transform: scale(1.1);
+}
+
+.img-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-dark);
+    transform: translateX(0);
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1;
+}
+
+.img-reveal.revealed::before {
+    transform: translateX(100%);
+}
+
+/* ========================================
+   Loading Animations
+   ======================================== */
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-gray-200);
+}
+
+.skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   Scroll Animations
+   ======================================== */
+.scroll-scale {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.scroll-scale.in-view {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.scroll-fade {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.scroll-fade.in-view {
+    opacity: 1;
+}
+
+.scroll-slide-up {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.scroll-slide-up.in-view {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ========================================
+   Morphing Shapes
+   ======================================== */
+.morph {
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+/* ========================================
+   Glitch Effect
+   ======================================== */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.3s infinite;
+    color: var(--color-primary);
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.3s infinite;
+    color: var(--color-secondary);
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 100% {
+        clip: rect(0, 0, 0, 0);
+    }
+    20% {
+        clip: rect(20px, 9999px, 40px, 0);
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        clip: rect(60px, 9999px, 80px, 0);
+        transform: translate(2px, -2px);
+    }
+    60% {
+        clip: rect(40px, 9999px, 60px, 0);
+        transform: translate(-2px, 2px);
+    }
+    80% {
+        clip: rect(80px, 9999px, 100px, 0);
+        transform: translate(2px, -2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 100% {
+        clip: rect(0, 0, 0, 0);
+    }
+    20% {
+        clip: rect(40px, 9999px, 60px, 0);
+        transform: translate(2px, -2px);
+    }
+    40% {
+        clip: rect(20px, 9999px, 40px, 0);
+        transform: translate(-2px, 2px);
+    }
+    60% {
+        clip: rect(80px, 9999px, 100px, 0);
+        transform: translate(2px, -2px);
+    }
+    80% {
+        clip: rect(60px, 9999px, 80px, 0);
+        transform: translate(-2px, 2px);
+    }
+}
+
+/* ========================================
+   Particle Effect Container
+   ======================================== */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-float 10s infinite;
+}
+
+@keyframes particle-float {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(90vh) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(10vh) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+    }
+}
+
+/* ========================================
+   Wave Animation
+   ======================================== */
+.wave {
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* ========================================
+   Typewriter Effect
+   ======================================== */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--color-primary);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--color-primary); }
+}
+
+/* ========================================
+   Spotlight Effect
+   ======================================== */
+.spotlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.spotlight:hover::before {
+    opacity: 1;
+}
+
+/* ========================================
+   Performance Optimizations
+   ======================================== */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Reduce animations for performance on mobile */
+@media (max-width: 768px) {
+    .parallax-element {
+        transition: none !important;
+    }
+    
+    .hover-glow::before,
+    .card-shine::before,
+    .img-reveal::before {
+        display: none;
+    }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
